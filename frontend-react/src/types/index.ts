@@ -180,6 +180,21 @@ export interface TopUser {
   borrow_count: number;
 }
 
+export interface OverdueReportStats {
+  total: number;
+  byDays: {
+    '1-7': number;
+    '8-14': number;
+    '15-30': number;
+    '30+': number;
+  };
+}
+
+export interface OverdueReport {
+  overdueBooks: Borrow[];
+  stats: OverdueReportStats;
+}
+
 export interface ApiResponse<T = any> {
   success: boolean;
   message?: string;

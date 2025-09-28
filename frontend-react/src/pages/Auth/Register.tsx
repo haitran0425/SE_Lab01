@@ -1,19 +1,22 @@
 import React from 'react';
-import { Form, Input, Button, Card, Typography, Select, message } from 'antd';
+import { Form, Input, Button, Card, Typography } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { RegisterData } from '../../types';
 
 const { Title, Text } = Typography;
-const { Option } = Select;
 const { TextArea } = Input;
+
+type RegisterFormValues = RegisterData & { confirmPassword: string };
 
 const Register: React.FC = () => {
   const { register, isLoading } = useAuth();
   const navigate = useNavigate();
 
-  const onFinish = async (values: any) => {
-    const success = await register(values);
+  const onFinish = async (values: RegisterFormValues) => {
+    const { confirmPassword, ...payload } = values;
+    const success = await register(payload);
     if (success) {
       navigate('/login');
     }

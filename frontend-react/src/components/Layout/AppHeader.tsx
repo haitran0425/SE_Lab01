@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Button, Dropdown, Avatar, Space } from 'antd';
 import { UserOutlined, LogoutOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 
 const { Header } = Layout;
 
