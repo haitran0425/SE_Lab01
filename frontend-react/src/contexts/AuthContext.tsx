@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { message } from 'antd';
 import Cookies from 'js-cookie';
-import { authService } from '../services/authService';
+import { authService } from '../services/authService.ts';
 import { User, LoginCredentials, RegisterData } from '../types';
 
 interface AuthContextType {
@@ -140,3 +140,6 @@ export const useAuth = (): AuthContextType => {
   }
   return context;
 };
+
+
+

@@ -1,4 +1,4 @@
--- =============================================
+﻿-- =============================================
 -- HỆ THỐNG QUẢN LÝ THƯ VIỆN TRỰC TUYẾN
 -- Database Design - MySQL
 -- =============================================
@@ -289,5 +289,6 @@ JOIN books b ON br.book_id = b.id;
 CREATE INDEX idx_books_search ON books(title, author, category_id);
 CREATE INDEX idx_borrows_dates ON borrows(borrow_date, due_date, return_date);
 CREATE INDEX idx_users_role ON users(role, is_active);
-CREATE INDEX idx_activity_logs_date ON activity_logs(created_at DESC);
+CREATE INDEX idx_activity_logs_date ON activity_logs(created_at);
+
 

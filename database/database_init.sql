@@ -1,12 +1,12 @@
--- =============================================
+﻿-- =============================================
 -- SCRIPT KHỞI TẠO DATABASE CHO HỆ THỐNG THƯ VIỆN
 -- =============================================
 
 -- Tạo database mới
-DROP DATABASE IF EXISTS library_management_system;
-CREATE DATABASE library_management_system 
-CHARACTER SET utf8mb4 
-COLLATE utf8mb4_unicode_ci;
+-- DROP DATABASE IF EXISTS library_management_system;
+-- CREATE DATABASE library_management_system 
+-- CHARACTER SET utf8mb4 
+-- COLLATE utf8mb4_unicode_ci;
 
 -- Sử dụng database
 USE library_management_system;
@@ -16,8 +16,6 @@ USE library_management_system;
 -- GRANT ALL PRIVILEGES ON library_management_system.* TO 'library_user'@'localhost';
 -- FLUSH PRIVILEGES;
 
--- Chạy script thiết kế database
-SOURCE database_design.sql;
 
 -- Hiển thị thông tin database đã tạo
 SELECT 'Database library_management_system đã được tạo thành công!' as Status;

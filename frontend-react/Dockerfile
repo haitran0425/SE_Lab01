@@ -17,13 +17,16 @@ WORKDIR /app
 COPY package*.json ./
 
 # Cài đặt dependencies
-RUN npm install --omit=dev && npm cache clean --force
+RUN npm install && npm cache clean --force
 
 # Copy source code
 COPY . .
 
 # Build ứng dụng
 RUN npm run build
+
+# Loại bỏ devDependencies sau khi build để giữ cho stage nhẹ hơn
+RUN npm prune --production && npm cache clean --force
 
 # Production stage
 FROM nginx:alpine

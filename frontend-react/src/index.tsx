@@ -5,7 +5,9 @@ import viVN from 'antd/locale/vi_VN';
 import 'antd/dist/reset.css';
 import './index.css';
 
-import App from './App.js';
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext.tsx';
+import AppRouter from './router/AppRouter.tsx';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +16,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ConfigProvider locale={viVN}>
-      <App />
+      <BrowserRouter>
+        <AuthProvider>
+          <AppRouter />
+        </AuthProvider>
+      </BrowserRouter>
     </ConfigProvider>
   </React.StrictMode>
 );

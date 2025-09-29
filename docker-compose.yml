@@ -17,9 +17,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
-      - ./database_design.sql:/docker-entrypoint-initdb.d/init.sql:ro
-      - ./database_init.sql:/docker-entrypoint-initdb.d/setup.sql:ro
+      - ./database/database_design.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./database/database_init.sql:/docker-entrypoint-initdb.d/setup.sql:ro
+
     networks:
       - library_network
     healthcheck:
